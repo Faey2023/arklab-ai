@@ -28,14 +28,14 @@ const Filters = () => {
   const handleStatusChange = (status: string, checked: boolean) => {
     const newStatuses = checked
       ? [...filters.selectedStatuses, status]
-      : filters.selectedStatuses.filter((s) => s !== status);
+      : filters.selectedStatuses.filter((s: string) => s !== status);
     dispatch(setSelectedStatuses(newStatuses));
   };
 
   const handleCategoryChange = (category: string, checked: boolean) => {
     const newCategories = checked
       ? [...filters.selectedCategories, category]
-      : filters.selectedCategories.filter((c) => c !== category);
+      : filters.selectedCategories.filter((c: string) => c !== category);
     dispatch(setSelectedCategories(newCategories));
   };
 
@@ -151,12 +151,12 @@ const Filters = () => {
               Active Filters
             </Label>
             <div className="flex flex-wrap gap-1">
-              {filters.selectedStatuses.map((status) => (
+              {filters.selectedStatuses.map((status: string) => (
                 <Badge key={status} variant="secondary" className="text-xs">
                   Status: {status}
                 </Badge>
               ))}
-              {filters.selectedCategories.map((category) => (
+              {filters.selectedCategories.map((category: string) => (
                 <Badge key={category} variant="secondary" className="text-xs">
                   {category}
                 </Badge>
