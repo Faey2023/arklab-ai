@@ -2,6 +2,7 @@ import type { Agent } from "@/types";
 import agentsData from "@/data/mock-agents.json";
 import AgentsGrid from "@/components/AgentsGrid";
 import SearchBar from "@/components/SearchBar";
+import Filters from "@/components/Filters";
 
 // data fetch
 const getAgents = async (): Promise<Agent[]> => {
@@ -38,6 +39,13 @@ const Home = async () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* sidebar filter */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-8">
+              <Filters />
+            </div>
+          </div>
+
           <div className="lg:col-span-3">
             <div className="mb-4">
               <p className="text-sm text-gray-600">
