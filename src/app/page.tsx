@@ -1,6 +1,7 @@
 import type { Agent } from "@/types";
 import agentsData from "@/data/mock-agents.json";
 import AgentsGrid from "@/components/AgentsGrid";
+import SearchBar from "@/components/SearchBar";
 
 // data fetch
 const getAgents = async (): Promise<Agent[]> => {
@@ -31,9 +32,12 @@ const Home = async () => {
             find the perfect AI solution for your needs.
           </p>
         </div>
+        {/* search */}
+        <div className="mb-8 max-w-2xl mx-auto">
+          <SearchBar />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-
           <div className="lg:col-span-3">
             <div className="mb-4">
               <p className="text-sm text-gray-600">
